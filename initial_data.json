@@ -1,0 +1,142 @@
+[
+{
+  "model": "menu.category",
+  "pk": 1,
+  "fields": {
+    "name": "Бургеры",
+    "description": ""
+  }
+},
+{
+  "model": "menu.category",
+  "pk": 2,
+  "fields": {
+    "name": "Десерты",
+    "description": ""
+  }
+},
+{
+  "model": "menu.category",
+  "pk": 3,
+  "fields": {
+    "name": "Напитки",
+    "description": ""
+  }
+},
+{
+  "model": "menu.category",
+  "pk": 4,
+  "fields": {
+    "name": "Шаурмама",
+    "description": ""
+  }
+},
+{
+  "model": "menu.category",
+  "pk": 5,
+  "fields": {
+    "name": "Хот-доги",
+    "description": ""
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 1,
+  "fields": {
+    "name": "Чикен бургер",
+    "description": "",
+    "price": "69.00",
+    "category": 1
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 2,
+  "fields": {
+    "name": "Крабс-бургер",
+    "description": "",
+    "price": "67.00",
+    "category": 1
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 3,
+  "fields": {
+    "name": "Датский",
+    "description": "",
+    "price": "129.00",
+    "category": 5
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 4,
+  "fields": {
+    "name": "Двойной",
+    "description": "",
+    "price": "199.00",
+    "category": 5
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 5,
+  "fields": {
+    "name": "Дегустационный",
+    "description": "",
+    "price": "0.00",
+    "category": 2
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 6,
+  "fields": {
+    "name": "Артэ-музз",
+    "description": "",
+    "price": "100.00",
+    "category": 2
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 7,
+  "fields": {
+    "name": "Одинокая",
+    "description": "",
+    "price": "200.00",
+    "category": 4
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 8,
+  "fields": {
+    "name": "В возрасте",
+    "description": "",
+    "price": "333.00",
+    "category": 4
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 9,
+  "fields": {
+    "name": "Ядер-кола",
+    "description": "",
+    "price": "144.00",
+    "category": 3
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 10,
+  "fields": {
+    "name": "Фанта-стика",
+    "description": "",
+    "price": "242.00",
+    "category": 3
+  }
+}
+]
