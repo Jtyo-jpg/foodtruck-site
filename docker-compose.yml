@@ -1,0 +1,31 @@
+services:
+  web:
+    build: .
+    volumes:
+      - static_volume:/app/staticfiles
+      - sqlite_data:/app
+    networks:
+      - internal
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - static_volume:/static:ro
+    networks:
+      - internal
+    depends_on:
+      - web
+    restart: unless-stopped
+
+volumes:
+  static_volume:
+  sqlite_data:
+
+networks:
+  internal:
+    driver: bridge

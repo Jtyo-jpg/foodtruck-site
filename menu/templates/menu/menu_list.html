@@ -1,0 +1,54 @@
+{% extends 'menu/base.html' %}
+{% block title %}Меню фудтрака{% endblock %}
+{% block content %}
+<!-- Герой-блок -->
+<section class="hero">
+    <div class="container">
+        <h1>Самые вкусные блюда на колёсах!</h1>
+        <p class="lead">Всё, что вы любите – от сочных бургеров до освежающих напитков</p>
+        <a href="{% url 'create_order' %}" class="btn btn-warning btn-lg text-dark fw-bold">
+            <i class="fas fa-shopping-basket"></i> Сделать заказ
+        </a>
+    </div>
+</section>
+
+<div class="container">
+    <h2 class="mb-4"><i class="fas fa-fire text-danger"></i> Наше меню</h2>
+    {% if categories %}
+        {% for category in categories %}
+            <div class="mb-5">
+                <h3 class="category-title">{{ category.name }}</h3>
+                {% if category.description %}
+                    <p class="text-muted">{{ category.description }}</p>
+                {% endif %}
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    {% for item in category.menuitem_set.all %}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    {% if item.description %}
+                                        <p class="card-text text-muted">{{ item.description }}</p>
+                                    {% endif %}
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="price">{{ item.price }} ₽</span>
+                                        <a href="{% url 'create_order' %}" class="btn btn-orange btn-sm">
+                                            <i class="fas fa-plus-circle"></i> В заказ
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="col">
+                            <p class="text-muted">В этой категории пока нет блюд</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info">Меню пока пусто. Загляните позже!</div>
+    {% endif %}
+</div>
+{% endblock %}
